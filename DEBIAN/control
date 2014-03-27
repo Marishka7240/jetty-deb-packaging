@@ -1,0 +1,18 @@
+Package: jetty  
+Version: 9.1.3
+Maintainer: Alex <s1225@mail.ru>   
+Architecture: all
+Section: libs
+Priority: optional
+Depends: openjdk-7-jdk 
+Description: Jetty provides a Web server and javax.servlet container, plus support for SPDY, WebSocket, OSGi, JMX, JNDI, JAAS, many other integrations
+ Jetty is used in a wide variety of projects and products, both in development and production. 
+ Jetty can be easily embedded in devices, tools, frameworks, application servers, and clusters. 
+ See the Jetty Powered page for more uses of Jetty.
+ .
+ The current recommended version for use is Jetty 9 which can be obtained here: Jetty Downloads. 
+ Also available are the latest maintenance releases of Jetty 8 and Jetty 7.
+ .
+ The Jetty project is hosted entirely at the Eclipse Foundation and has been for a number of years. 
+ Prior releases of Jetty have existed in part or completely under the Jetty project at the Codehaus. 
+ See the About page for more information about the history of Jetty.

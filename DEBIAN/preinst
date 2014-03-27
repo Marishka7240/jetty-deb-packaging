@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rm -f /opt/jetty || echo 'Simlink has not been deleted'
