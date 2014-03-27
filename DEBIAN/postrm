@@ -11,8 +11,4 @@ fi
 rm -f /etc/default/jetty || true
 rm -f /etc/init.d/jetty || true
 rm -f "$JETTY_HOME" || true
-#rm -r -f "$JETTY_HOME_REAL" || true
-
-
-
 
