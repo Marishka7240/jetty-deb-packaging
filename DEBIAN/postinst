@@ -6,10 +6,6 @@ JETTY_HOME="/opt/jetty"
 
 ln -sf "$JETTY_HOME_REAL" "$JETTY_HOME" 
 
-if ! getent passwd 'jetty' > /dev/null 2>&1; then
-	useradd jetty || true
-fi
-
 ln -fs "$JETTY_HOME/conf/jetty" /etc/default/jetty
 ln -fs "$JETTY_HOME/bin/jetty.sh" /etc/init.d/jetty
 

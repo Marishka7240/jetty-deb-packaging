@@ -1,3 +1,13 @@
 #!/bin/bash
 
+JETTY_LOG_DIR="/var/log/jetty"
+
 rm -f /opt/jetty || echo 'Simlink has not been deleted'
+
+if ! getent passwd 'jetty' > /dev/null 2>&1; then
+        useradd jetty || true
+fi
+
+mkdir "$JETTY_LOG_DIR" || true
+chown -R jetty:root "$JETTY_LOG_DIR" || true
+chmod -R 755 "$JETTY_LOG_DIR" || true
