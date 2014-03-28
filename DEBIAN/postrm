@@ -1,15 +1,5 @@
 #!/bin/bash
 
-JETTY_VERSION='9.1.3'
-JETTY_HOME_REAL="/opt/jetty_$JETTY_VERSION"
 JETTY_HOME="/opt/jetty"
 
-if getent passwd 'jetty' > /dev/null 2>&1; then
-        userdel -f jetty || true
-fi
-
-rm -f /etc/default/jetty || true
-rm -f /etc/init.d/jetty || true
 rm -r -f "$JETTY_HOME" || true
-rm -r -f "$JETTY_HOME_REAL" || true
-rm -r -f /var/log/jetty

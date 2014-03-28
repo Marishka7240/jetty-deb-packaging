@@ -1,16 +1,25 @@
 #!/bin/bash
-
 JETTY_VERSION='9.1.3'
 JETTY_HOME_REAL="/opt/jetty_$JETTY_VERSION"
 JETTY_HOME="/opt/jetty"
+JETTY_LOG_DIR="/var/log/jetty"
+JETTY_HOME='/opt/jetty'
+JETTY_CONTENT='/srv/jetty'
 
 ln -sf "$JETTY_HOME_REAL" "$JETTY_HOME" 
+#
+#ln -fs "$JETTY_HOME/conf/jetty" /etc/default/jetty
+#ln -fs "$JETTY_HOME/bin/jetty.sh" /etc/init.d/jetty
 
-ln -fs "$JETTY_HOME/conf/jetty" /etc/default/jetty
-ln -fs "$JETTY_HOME/bin/jetty.sh" /etc/init.d/jetty
+if ! getent passwd 'jetty' > /dev/null 2>&1; then
+        useradd jetty || echo "Can't create user"
+fi
 
-chown -R jetty "/etc/init.d/jetty" || true
 chown -R jetty "$JETTY_HOME_REAL" || true
-chown -R jetty "$JETTY_HOME"
+chown -R jetty "$JETTY_HOME" || true
+chown -R jetty "$JETTY_LOG_DIR" || true
+chmod -R 775 "$JETTY_LOG_DIR" || true
+chown -R jetty "$JETTY_CONTENT" || true
+chmod -R 775 "$JETTY_CONTENT" || true
 
 /etc/init.d/jetty start || echo "Can't start jetty" 
