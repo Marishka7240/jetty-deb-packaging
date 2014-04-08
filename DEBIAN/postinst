@@ -12,7 +12,7 @@ ln -sf "$JETTY_HOME_REAL" "$JETTY_HOME"
 #ln -fs "$JETTY_HOME/bin/jetty.sh" /etc/init.d/jetty
 
 if ! getent passwd 'jetty' > /dev/null 2>&1; then
-        useradd jetty || echo "Can't create user"
+        useradd jetty -m || echo "Can't create user"
 fi
 
 chown -R jetty "$JETTY_HOME_REAL" || true
