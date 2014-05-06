@@ -1,0 +1,5 @@
+#!/bin/bash
+
+JETTY_HOME="/opt/jetty"
+
+rm -r -f "$JETTY_HOME" || true

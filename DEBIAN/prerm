@@ -1,3 +1,0 @@
-#!/bin/bash
-
-/etc/init.d/jetty stop || echo "Can't stop jetty"

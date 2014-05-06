@@ -1,0 +1,8 @@
+#!/bin/bash
+
+JETTY_VERSION='9.1.3'
+JETTY_HOME_REAL="/opt/jetty_$JETTY_VERSION"
+
+/etc/init.d/jetty stop || echo "Can't stop jetty"
+rm -rf "$JETTY_HOME_REAL" || true
+rm -f /srv/jetty/* || true
